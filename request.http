@@ -1,0 +1,33 @@
+GET http://localhost:3000/payments?page=1 HTTP/1.1
+
+###
+GET http://localhost:3000/payments/b5c99f55-9096-4153-8e69-1cf4cb1345b6 HTTP/1.1
+
+###
+POST http://localhost:3000/payments HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Pago",
+  "billed_hours": 1.5,
+  "billed_at": "2021-03-01",
+  "billing_currency": "clf",
+  "billed_amount": 1.5,
+  "needs_exchange": false,
+  "exchange_currency": "clp"
+}
+###
+PUT http://localhost:3000/payments/b5c99f55-9096-4153-8e69-1cf4cb1345b6 HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Pago",
+  "billed_hours": 1.5,
+  "billed_at": "2022-03-01",
+  "billing_currency": "clf",
+  "billed_amount": 1.5,
+  "needs_exchange": true,
+  "exchange_currency": "clp"
+}
+###
+DELETE http://localhost:3000/payments/f3702f57-c31e-48ea-9013-0daa7ba862ea HTTP/1.1
